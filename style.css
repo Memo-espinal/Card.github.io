@@ -1,0 +1,231 @@
+:root{
+    --border-color:rgb(133, 250, 234);
+    --background: rgb(81, 226, 252);
+    --front-bg: rgb(51, 204, 255);
+    --front-bg-darken:rgb(51, 204, 255) ;
+    --shadow: rgba(0,0,0,0.1);
+    --drop-shadow: rgba(0,0,0,0.5);
+    --text: #132715;
+}
+html,
+body{
+    overflow: hidden;
+    background-color: #fc39bbb2;
+    width: 100%;
+    height: 100%;
+
+}
+.card{
+    position: relative;
+    width: 425px;
+    height: 300px;
+    border: 10px solid var(--border-color);
+    margin: 300px auto;
+    box-shadow: inset 10px 0px 15px 0px var(--shadow);
+    background-color: var(--background);
+}
+
+.card .textContainer{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+}
+
+.card .textContainer #header{
+    font-size: 1.5rem;
+    margin:60px auto;
+
+}
+
+.card p{
+    /*supect to change*/
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    color: var(--text);
+    font-style: italic;
+    text-align: center;
+    margin: 30px auto;
+
+}
+
+.card .front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: -10px 0px 0px -10px;
+    border: 10px solid var(--border-color);
+    backface-visibility: hidden;
+    background-color: var(--front-bg);
+    background-size: contain;
+    transform-style: preserve-3d;
+    transform-origin: 50% 0%;
+    transform: perspective(800px)rotateX(0deg);
+    transition: all 0.8s ease-in-out;
+}
+
+.card:hover .front{
+    transform:perspective(800px)rotateX(170deg);
+}
+
+.card .back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 10px solid var(--border-color);
+    margin: -10px 0px 0px -10px;
+    backface-visibility: visible;
+    filter: drop-shadow(2px 2px 4px var(--drop-shadow));
+    transform-style: preserve-3d;
+    transform-origin: 50% 0%;
+    transform: perspective(800px) rotateX(0deg);
+    transition: all 0.8s ease-in-out;
+    background-color: var(--background);
+    box-shadow: 0 0 0 0 var(--shadow);
+}
+
+.card:hover .back{
+    transform: perspective(800px)rotateX(170deg);
+    box-shadow: 0px 5px 10px 0px var(--shadow), inset 2px 0px 15px 0px var(--shadow);
+}
+.heart-container{
+    position: relative;
+    top:calc(50% - 50px);
+    left:calc(50% - 50px);
+}
+
+.heart1{
+    position:absolute;
+    background-color: rgb(212, 104, 255);
+    filter:drop-shadow(0px 0px 5px var(--drop-shadow));
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    transform: rotate(-45deg);
+
+}
+
+.heart1:before,
+.heart1:after{
+    content: "";
+    position: absolute;
+    background-color: rgb(255, 104, 242);
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.heart1:before{
+    top: -50px;
+}
+.heart1:after{
+    left:50px;
+}
+
+
+
+.heart2{
+    position:absolute;
+    background-color: rgb(239, 60, 255);
+    filter:drop-shadow(0px 0px 5px var(--drop-shadow));
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+    transform: rotate(-45deg);
+    top:25px;
+    left: 10px
+
+}
+
+.heart2:before,
+.heart2:after{
+    content: "";
+    position: absolute;
+    background-color: rgb(239, 60, 255);
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+}
+
+.heart2:before{
+    top: -40px;
+}
+.heart2:after{
+    left:40px;
+}
+
+.heart3{
+    position:absolute;
+    background-color: rgb(255, 0, 242);
+    filter:drop-shadow(0px 0px 5px var(--drop-shadow));
+    height: 60px;
+    width: 60px;
+    margin: 0 auto;
+    transform: rotate(-45deg);
+    top:49px;
+    left: 21px
+
+}
+
+.heart3:before,
+.heart3:after{
+    content: "";
+    position: absolute;
+    background-color: rgb(255, 0, 242);
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+
+.heart3:before{
+    top: -30px;
+}
+.heart3:after{
+    left:30px;
+}
+
+button {
+
+    cursor: pointer;
+    background-color: rgb(255, 151, 250);
+    border: .5px solid rgb(255, 151, 250);
+    border-radius: 10px;
+    color: #230deb;
+    padding: 8px;
+    margin-left: 25%;
+    margin-right: 16px;
+    box-shadow: 0 0 30px 0 rgb(212, 104, 255),
+                    0 0 30px 0 rgb(212, 104, 255),
+                    0 0 10px 0 rgb(212, 104, 255) inset;
+  }
+
+  button:hover {background-color: rgb(255, 83, 246)}
+  button:active {
+    background-color: rgb(170, 50, 164);
+    box-shadow: 0 0 30px 0 rgb(212, 104, 255),
+        0 0 30px 0 rgb(212, 104, 255),
+        0 0 10px 0 rgb(212, 104, 255) inset;
+    transform: translateY(4px);
+  }
+
+  .no {
+    padding-left: 50%;
+    background-color: rgb(255, 151, 250);
+    border: .5px solid rgb(255, 151, 250);
+    border-radius: 10px;
+    color: #ff0000;
+    padding: 8px;
+  }
+  .hidden{
+    position:absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    
+  }
+
+  .hidden2{
+    content:"";
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    
+  }
